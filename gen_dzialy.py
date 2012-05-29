@@ -18,7 +18,7 @@ import pickle
 from collections import defaultdict
 
 DEFAULT_PATH = 'groups'
-DEFAULT_FORMAT = 'html'
+DEFAULT_FORMAT = 'json'
 GROUP_DISPLAY_SEP = ':'
 
 def save_page(path_templ, rendered_page, number):
