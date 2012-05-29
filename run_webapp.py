@@ -1,13 +1,19 @@
 import json
 import pickle
 import plac
+import threading
+import time
 
 from collections import defaultdict
 
 import phoneldap.webfe as webfe
 import phoneldap.util as util
+import phoneldap.ldaputil as ldaputil
+
+import gen_dzialy
 
 DEFAULT_PORT = 5000
+DEFAULT_UPDATE_SECS = 300
 
 def load_dict(groups_file):
     return json.load(open(groups_file), encoding='utf-8') if groups_file is not None else {}
@@ -33,6 +39,29 @@ def paginate_groups(groups_users):
     return groups_pages
     
 
+def update_groups(app, groups_file, custom_groups_file):
+    if groups_file is not None:
+        groups_users = load_dict(groups_file)
+    else:
+        config = util.read_config()
+        l = ldaputil.setup_ldap(config)
+        all_ou_users = ldaputil.get_all_ou_users(l, config)
+        groups_users = gen_dzialy.parse_groups_from_all(l, config, all_ou_users)
+
+    custom_groups_users = load_dict(custom_groups_file)
+    merged_groups_users = merge_groups(groups_users, custom_groups_users)
+
+    groups_pages = paginate_groups(merged_groups_users)
+    app.groups_pages = groups_pages
+    
+
+def run_update_loop(app, groups_file, custom_groups_file):
+    while True:
+        time.sleep(DEFAULT_UPDATE_SECS)
+        update_groups(webfe.app, groups_file, custom_groups_file)
+        print 'updating'
+        
+        
 
 @plac.annotations(
    groups_file=('Groups file', 'option', 'g', str),
@@ -40,11 +69,9 @@ def paginate_groups(groups_users):
    port=('Port', 'option', 'p', int)
    )
 def run(groups_file=None, custom_groups_file=None, port=DEFAULT_PORT):
-    groups_users = load_dict(groups_file)
-    custom_groups_users = load_dict(custom_groups_file)
-    merged_groups_users = merge_groups(groups_users, custom_groups_users)
-    groups_pages = paginate_groups(merged_groups_users)
-    webfe.app.groups_pages = groups_pages
+    update_groups(webfe.app, groups_file, custom_groups_file)
+    update_thread = threading.Thread(target=run_update_loop, args=(webfe.app, groups_file, custom_groups_file))
+    update_thread.start()
     webfe.app.run(host='', port=port, debug=True)
 
 def main():

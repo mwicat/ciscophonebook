@@ -49,6 +49,7 @@ def parse_groups_from_all(l, config, users):
         d[ou].append(user)
     return d
 
+
 @plac.annotations(
    dest_path=('Destination path', 'positional', None, str),
    format=('Output format', 'option', 'f', str),
