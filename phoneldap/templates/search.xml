@@ -1,0 +1,11 @@
+<CiscoIPPhoneInput> 
+<Title>Search</Title> 
+<Prompt>Enter search phrase</Prompt> 
+<URL>{{ search_url }}</URL>          
+<InputItem> 
+        <DisplayName>Phrase</DisplayName> 
+        <QueryStringParam>phrase</QueryStringParam> 
+        <InputFlags>A</InputFlags> 
+        <DefaultValue></DefaultValue>   
+</InputItem> 
+</CiscoIPPhoneInput> 

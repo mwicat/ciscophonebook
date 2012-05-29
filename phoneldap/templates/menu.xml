@@ -1,0 +1,25 @@
+<CiscoIPPhoneMenu>
+
+  <Title>Title text goes here</Title>
+
+  <Prompt>Prompt text goes here</Prompt>
+
+  <MenuItem>
+
+   <Name>Search</Name>
+
+   <URL>{{ search_url }}</URL>
+
+  </MenuItem>
+
+
+  <MenuItem>
+
+   <Name>Sample search</Name>
+
+   <URL>{{ sample_search_url }}</URL>
+
+  </MenuItem>
+
+</CiscoIPPhoneMenu>
+
