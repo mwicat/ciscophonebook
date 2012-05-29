@@ -50,7 +50,6 @@ def parse_groups_from_all(l, config, users):
     return d
 
 @plac.annotations(
-   # group_str=('Group', 'positional', None, str),
    dest_path=('Destination path', 'positional', None, str),
    format=('Output format', 'option', 'f', str),
    url_prefix=('URL prefix', 'option', 'u', str)
@@ -59,10 +58,6 @@ def run(dest_path, format=DEFAULT_FORMAT, url_prefix=''):
     try:
         config = util.read_config()
         l = ldaputil.setup_ldap(config)
-
-        # groups_specs_str = group_str.split(',')
-        # groups_specs = [get_id_label(group) for group in groups_specs_str]
-        # groups_pages = fetch_groups(l, config, groups_specs)
 
         all_ou_users = ldaputil.get_all_ou_users(l, config)
         groups_pages = parse_groups_from_all(l, config, all_ou_users)
