@@ -60,21 +60,13 @@ def run(dest_path, format=DEFAULT_FORMAT, url_prefix=''):
         l = ldaputil.setup_ldap(config)
 
         all_ou_users = ldaputil.get_all_ou_users(l, config)
-        groups_pages = parse_groups_from_all(l, config, all_ou_users)
+        groups_users = parse_groups_from_all(l, config, all_ou_users)
 
-        if format == 'pickle':
-            pickle.dump(open(dest_path, 'wb'))
         if format == 'json':
             import json
-            json.dump(groups_pages, open(dest_path, 'wb'), sort_keys=True, indent=4, encoding='utf-8')
+            json.dump(groups_users, open(dest_path, 'wb'), sort_keys=True, indent=4, encoding='utf-8')
         else:
-            for group, pages in groups_pages.items():
-                group_path = os.path.join(DEFAULT_PATH, group)
-                if not os.path.exists(group_path):
-                    os.makedirs(group_path)
-                path_templ = '%s/page%%(number)d.html' % group_path
-                url_templ = url_prefix + '/' + path_templ
-                save_pages(pages, path_templ, url_templ)
+            raise Exception('No handler for output format %s' % format)
 
     except ldap.LDAPError, e:
         print type(e)
