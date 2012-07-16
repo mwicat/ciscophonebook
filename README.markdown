@@ -4,12 +4,11 @@ python2.7 gen_dzialy.py -f json groups.json
 python2.7 run_webapp.py -g groups.json
 
 ## Screenshots
-
-![Main menu](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_menu.png)
+![Main menu](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_menu.png)
 ![Group listing](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_groups.png)
-![Group users listing](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_users.png)
+![Group users listing](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_users.png)
 ![Search panel](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap3.png)
-![Search results](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap4.png)
+![Search results](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap4.png)
 
 ## Testing with server-side
 
