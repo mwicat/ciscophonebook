@@ -2,11 +2,14 @@
 
 import os
 import re
-import cmxml
 
-def read_config():
-    CONFIG_PATH = os.path.join(os.path.expanduser('~'), '.ldaprc')
-    config = eval(open(CONFIG_PATH).read())
+import pycisco.cmpush as cmpush
+import pycisco.cmxml as cmxml
+
+def read_config(config_path=None):
+    if config_path is None:
+        config_path = os.path.join(os.path.expanduser('~'), '.ldaprc')
+    config = eval(open(config_path).read())
     config['groups_dn'] = 'ou=Groups,' + config['base_dn']
     config['people_dn'] = 'ou=People,' + config['base_dn']
     return config

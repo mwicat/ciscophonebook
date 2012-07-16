@@ -52,18 +52,9 @@ def parseTelephoneAttr(telAttr):
     internal = nums[1] if len(nums) > 1 else None
     return external, internal
 
-def getGroupMembers(l, groups_dn, group):
-    group_dn = '%s=%s' % (ATTR_CNAME, group)
-    result_obj = searchFirst(l, groups_dn, group_dn)
-    uids = result_obj.get_attr_values(ATTR_MEMBER)
-    members = [searchFirst(l, uid) for uid in uids]
-    members = [member for member in members if member is not None]
-    return members
-
 def getOUMembers(l, people_dn, ou):
     ou_filter = '%s=%s' % (ATTR_OU, ou)
     result_set = search(l, people_dn, ou_filter)
-    print (l, people_dn, ou_filter)
     return result_set
 
 def getAllOUMembers(l, people_dn):

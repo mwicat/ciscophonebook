@@ -9,8 +9,8 @@ from flask import Flask, session, redirect, url_for, escape, request, make_respo
 
 app = Flask(__name__)
 
-config = util.read_config()
-
+SEARCH_ITEM_TITLE = 'Search'
+GROUPS_ITEM_TITLE = 'Groups'
 
 TEST_RESULTS = [model.UserInfo('mkowalski', 'marek', 'kowalski', '4353453', '435', '43534535') for i in range(100)]
 
@@ -18,7 +18,7 @@ def fetch_entries(l, phrase):
     phrase = '*%s*' % phrase
     filter = '(|(%s=%s)(%s=%s))' % (ldapfe.ATTR_CNAME, phrase, ldapfe.ATTR_GECOS, phrase)
     print 'filter', filter
-    return ldapfe.searchUser(l, config['people_dn'], filter)
+    return ldapfe.searchUser(l, app.rc_config['people_dn'], filter)
     # return TEST_RESULTS
 
 
@@ -50,9 +50,8 @@ def menu():
     sample_search_url = '%s?phrase=%s' % (search_url, 'a')
     groups_url = ext_url_for('.groups_list')
 
-    items = [('Wyszukiwanie', search_url),
-             # ('Wyszukiwanie przyklad', sample_search_url),
-             ('Dzialy', groups_url)]
+    items = [(SEARCH_ITEM_TITLE, search_url),
+             (GROUPS_ITEM_TITLE, groups_url)]
     content = util.format_menu(title, prompt, items)
     return make_xml_response(content)    
 
@@ -97,7 +96,7 @@ def users():
     phrase = request.args.get('phrase')
     page = int(request.args.get('page', 0))
 
-    l = ldaputil.setup_ldap(config)    
+    l = ldaputil.setup_ldap(app.rc_config)
     results = fetch_entries(l, phrase)
     pages = util.paginate_users(results)
 

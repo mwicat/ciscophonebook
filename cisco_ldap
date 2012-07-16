@@ -1,0 +1,10 @@
+#!/sbin/runscript
+
+start() 
+{
+  ebegin "Starting cisco_ldap"
+  start-stop-daemon --start --exec /usr/bin/cisco_ldap \
+    -u nobody:nobody --background --make-pidfile --pidfile /tmp/cisco_ldap.pid
+  eend $?
+}
+

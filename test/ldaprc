@@ -1,0 +1,6 @@
+{
+        'hostname': "127.0.0.1",
+        'port': 10389,
+        'base_dn': "dc=example,dc=com",
+        'people_dn': 'ou=people'
+}

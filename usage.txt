@@ -1,2 +1,0 @@
-python2.7 gen_dzialy.py -f json groups.json
-python2.7 run_webapp.py -g groups.json
