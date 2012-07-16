@@ -4,11 +4,12 @@
 
 ## Screenshots
 
-![Main menu](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_menu.png)
-![Group listing](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_groups.png)
-![Group users listing](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_users.png)
-![Search panel](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap3.png)
-![Search results](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap4.png)
+![Main menu](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_menu.jpg)
+![Group listing](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_groups.jpg)
+![Group users listing](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_users.jpg)
+![Search panel](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap3.jpg)
+![Search results](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap4.jpg)
+
 
 ## Testing with server-side
 
