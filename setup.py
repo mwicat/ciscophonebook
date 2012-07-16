@@ -3,7 +3,7 @@ from setuptools import setup
 import os, glob
 
 def read(fname):
-    return open(fname).read()
+    return open(fname).read() if os.path.exists(fname) else ''
 
 setup(
     name = "cisco_ldap",
