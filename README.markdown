@@ -1,9 +1,9 @@
 ## Usage
 
-python2.7 gen_dzialy.py -f json groups.json
-python2.7 run_webapp.py -g groups.json
+``cisco_ldap``
 
 ## Screenshots
+
 ![Main menu](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_menu.png)
 ![Group listing](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_groups.png)
 ![Group users listing](http://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_users.png)
