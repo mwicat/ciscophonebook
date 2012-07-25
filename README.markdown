@@ -4,13 +4,23 @@
 
 ## Screenshots
 
+### Main menu
+
 ![Main menu](https://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_menu.jpg)
+
+### Menu showing groups of users to choose from
 
 ![Group listing](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_groups.jpg)
 
+### Users in the chosen group
+
 ![Group users listing](https://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap_users.jpg)
 
+### Search panel
+
 ![Search panel](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap3.jpg)
+
+### Search results
 
 ![Search results](https://cloud.github.com/downloads/mwicat/cisco_ldap/cisco_ldap4.jpg)
 
