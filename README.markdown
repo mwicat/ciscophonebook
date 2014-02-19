@@ -6,23 +6,23 @@
 
 ### Main menu
 
-![Main menu](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_menu.jpg)
+![Main menu](https://github.com/downloads/mwicat/ciscophonebook/cisco_ldap_menu.jpg)
 
 ### Menu showing groups of users to choose from
 
-![Group listing](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_groups.jpg)
+![Group listing](https://github.com/downloads/mwicat/ciscophonebook/cisco_ldap_groups.jpg)
 
 ### Users in the chosen group
 
-![Group users listing](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap_users.jpg)
+![Group users listing](https://github.com/downloads/mwicat/ciscophonebook/cisco_ldap_users.jpg)
 
 ### Search panel
 
-![Search panel](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap3.jpg)
+![Search panel](https://github.com/downloads/mwicat/ciscophonebook/cisco_ldap3.jpg)
 
 ### Search results
 
-![Search results](https://github.com/downloads/mwicat/cisco_ldap/cisco_ldap4.jpg)
+![Search results](https://github.com/downloads/mwicat/ciscophonebook/cisco_ldap4.jpg)
 
 
 ## Testing with server-side
